@@ -7,6 +7,7 @@ import java.util.Random;
 public class Player extends Entity {
 	private int id;
 	private Player following = null;
+	private AABB aabb;
 	private HashMap<Entity, Integer[]> cache;
 	private double cleanupPeriod = 60;
 
@@ -15,6 +16,9 @@ public class Player extends Entity {
 //		super(id, position, new double[]{0, 0, 0}, new double[]{0, 0, 0}, polygons);
 		this.id = id;
 		this.cache = new HashMap<Entity, Integer[]>();
+		
+		// Calculate AABB
+		this.aabb = new AABB();
 	}
 	
 	public Player getFollowing() {

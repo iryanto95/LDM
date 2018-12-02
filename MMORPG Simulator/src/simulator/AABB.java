@@ -17,4 +17,14 @@ public class AABB {
 	public double[] getAABB() {
 		return new double[] {this.xmin, this.ymin, this.zmin, this.xmax, this.ymax, this.zmax};
 	}
+	
+	public boolean checkContains(double[] point) {
+		if (point[0] < this.xmin || point[0] > this.xmax)
+			return false;
+		if (point[1] < this.ymin || point[1] > this.ymax)
+			return false;
+		if (point[2] < this.zmin || point[2] > this.zmax)
+			return false;
+		return true;
+	}
 }

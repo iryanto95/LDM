@@ -9,11 +9,10 @@ public class Player extends Entity {
 	private Player following = null;
 	private AABB aabb;
 	private HashMap<Entity, Integer[]> cache;
-	private double cleanupPeriod = 60;
+	private double cleanupPeriod = 500;
 
 	public Player(int id, double[] position, int[] polygons) {
-		super(id, position, new double[]{0, 0}, new double[]{0, 0}, polygons);
-//		super(id, position, new double[]{0, 0, 0}, new double[]{0, 0, 0}, polygons);
+		super(id, position, new double[]{0, 0, 0}, new double[]{0, 0, 0}, polygons);
 		this.id = id;
 		this.cache = new HashMap<Entity, Integer[]>();
 		
@@ -88,6 +87,7 @@ public class Player extends Entity {
 		// Remove by id instead of index
 		// TODO
 	}
+	
 	public void cleanupCache() {
 		
 	}
